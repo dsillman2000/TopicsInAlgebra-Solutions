@@ -1,0 +1,215 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Welcome to Overleaf --- just edit your LaTeX on the left,
+% and we'll compile it for you on the right. If you open the
+% 'Share' menu, you can invite other users to edit at the same
+% time. See www.overleaf.com/learn for more info. Enjoy!
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass{beamer}
+\usepackage{amsmath}
+%Information to be included in the title page:
+\usefonttheme{serif}
+\title{Topics in Algebra, Chapter 1 Solutions}
+\author{David Sillman}
+\date{2022}
+
+\begin{document}
+
+\frame{\titlepage}
+
+\begin{frame}
+\frametitle{1.1 - Set Theory}
+\small
+\begin{enumerate}
+    \item [(1a)]
+    If $A\subset B$ and $B\subset C$, then every element $a\in A$ is also $a\in B$. Likewise, $B\subset C \Leftrightarrow \left(a\in B \Rightarrow a\in C\right)$. Thus, every element $a\in A$ is also in $C$. Therefore, $A\subset C$.
+    \item [(1b)]
+    If we presuppose that $B\subset A$, this means that $x\in B \Rightarrow x\in A$. In set-builder notation, we know that \begin{equation*}
+        A\cup B = \left\{ x \mid x\in A \vee x\in B \right\}
+    \end{equation*} 
+    Because every element of $B$ is also in $A$, the set builder is reduced to 
+    \begin{equation*}
+        A\cup B = \{x\mid x\in A \} = A
+    \end{equation*}
+
+    Conversely, if we start by supposing that $A\cup B = A$, this implies, by logical necessity, that
+    \begin{equation*}
+        (x\in A) \Leftrightarrow (x\in A \vee x\in B)
+    \end{equation*}
+    As alluded to above, this is logically transformable into the statement that $x\in B \Rightarrow x\in A$, and thus $B\subset A$.
+\end{enumerate}
+\end{frame}
+\begin{frame}
+\frametitle{1.1 - Set Theory}
+\small
+\begin{enumerate}
+    \item [(1c)] \quad In the set $B \cup C$, every element satisfies $x\in B \vee x\in C$. Likewise, in $A \cup C$, every element satisfies $x\in A \vee x\in C$. In the case that $x\in C$, the right side of the disjunction is satisfied in both sets. If $x\in B$, then $B\subset A$ implies that $x\in A$, and so both sets are satisfied again. This means that every element in $B\cup C$ is in $A\cup C$, and so $B\cup C \subset A\cup C$.
+    
+    \quad Similarly, every element of $B\cap C$ satisfies $x\in B \wedge x\in C$ and every element of $A\cap C$ satisfies $x\in A \wedge x\in C$. Because, again, due to $B\subset A$, we have that $x\in B \Rightarrow x\in A$ and thus every element in $B\cap C$ must also be in $A\cap C$ and so $B\cap C \subset A \cap C$.
+\end{enumerate}
+\end{frame}
+\begin{frame}
+\frametitle{1.1 - Set Theory}
+\small
+\begin{enumerate}
+    \item [(2a)] The commutativity of set intersection ($\cap$) and set union ($\cup$) follow from the analogous commutativity properties of logical operators $\wedge$ and $\vee$, respectively. Because $A\cap B$ consists of the elements which satisfy
+    \begin{equation*}
+    	x\in A \wedge x\in B \quad\equiv\quad x\in B \wedge x\in A
+    \end{equation*}
+    and thus it follows that $A\cap B = B\cap A$. The same argument follows for $A \cup B = B\cup A$.
+    \item [(2b)] As with the last problem, the associativity of $\cap$ follows from the associativity of logical $\wedge$. That is, the set $(A\cap B)\cap C$ consists of elements which satisfy,
+    \begin{equation*}
+    	(x\in A \wedge x\in B)\wedge x\in C\quad\equiv\quad x\in A\wedge(x\in B \wedge x\in C)
+    \end{equation*}
+    And thus, exactly those same elements satisfy the necessary condition for being elements of $A\cap(B\cap C)$, giving the equality $(A\cap B)\cap C = A\cap(B\cap C)$.
+\end{enumerate}
+\end{frame}
+\begin{frame}
+\frametitle{1.1 - Set Theory}
+\small
+\begin{enumerate}
+	\item[(3)] Logically speaking, the elements of $A\cup(B\cap C)$ are those which satisfy $x\in A \vee (x\in B \wedge x\in C)$. By the distributivity of $\vee$, it follows that this logical condition is equivalent to the condition,
+	\begin{equation*}
+		x\in A \vee (x\in B \wedge x\in C)\quad\equiv\quad(x\in A\vee x\in B)\wedge (x\in A \vee x\in C)
+	\end{equation*}
+	And thus, the elements in the former set must be exactly those elements in the latter set, giving the equality $A\cup(B\cap C) = (A\cup B)\cap(A\cup C)$.
+	\item[(4a)] The elements of $(A\cap B)'$ are those which satisfy $\neg(x\in A\wedge x\in B)$. Applying De Morgan's logical negation rules, we get that this is logically equivalent to $x\notin A\vee x\notin B$. The set whose elements all satisfy this condition is identically $A'\cup B'$.
+	\item[(4b)] As in the last problem, we translate the set $(A\cup B)'$ into the membership condition $\neg(x\in A \vee x\in B)$. De Morgan transforms this into the membership condition $x\notin A \wedge x\notin B$. This membership condition corresponds to the identical set, $A'\cap B'$.
+\end{enumerate}
+\end{frame}
+\begin{frame}
+\frametitle{1.1 - Set Theory}
+\small
+\begin{enumerate}
+	\item[(5)] There are two cases: (i) $A$ is disjoint from $B$ ($A\cap B = \emptyset$), or (ii) $A$ is not disjoint from $B$ ($A\cap B \neq \emptyset$).
+	
+	\quad In case (i), we trivially have that $o(A\cap B) = o(\emptyset) = 0$. So, it is trivially the case that every element of $A$ is represented in $A\cup B$ and likewise for $B$, and all of these elements are distinct. Therefore, $o(A\cup B) = o(A) + o(B)$, which works for our hypothesis given that $o(A\cap B) = 0$.
+	
+	\quad In case (ii), let's suppose that there are $k$ elements in common between $A$ and $B$, such that $o(A\cap B) = k$. Because $A\cup B$ will only contain one copy of each of the common elements, we must subtract $o(A\cap B)$ from $o(A) + o(B)$ to get the number of unique elements in $A\cup B$.
+\end{enumerate}
+\end{frame}
+\begin{frame}
+\frametitle{1.1 - Set Theory}
+\small
+\begin{enumerate}
+	\item[(6)] First, we construct on $A$ a bijective index $i: A\to [n]$. Every subset $S\subset A$ is uniquely identified by an $n$-tuple of binary variables $(b_1,\ldots,b_n)\in B$, with $b_i\in \{0, 1\}$. It's trivial to see that the set of all binary $n$-tuples $B$ has $2^n$ elements. From this set, we have a bijection which generates (and indexes) the set of all subsets of $A$ (hereafter called the \textit{power set} of $A$, $\mathcal{P}(A)$). That is, we define $\sigma: B\to \mathcal{P}(A)$ via the map 
+	\begin{equation*}	
+	\sigma: b\mapsto \bigcup_{b_j=1} i^{-1}(j)
+	\end{equation*}
+	In other words, if a particular subset had $b_j = 1$, this means the element $a\in A$ with $i(a) = j$ is included in the subset. Because there exists a bijective map between the finite sets $B$ and $\mathcal{P}(A)$, we have that they are the same size. Therefore, $\mathcal{P}(A)$ has $2^n$ elements.
+\end{enumerate}
+\end{frame}
+\begin{frame}
+\frametitle{1.1 - Set Theory}
+\small
+\begin{enumerate}
+	\item[(7)] Let $S$ be the set of Americans. Let $C$ be the set of Americans that like cheese, and $A$ be the set of Americans that like apples. The proportions given suggest that $|C|/|S| = 0.63$ and that $|A|/|S| = 0.76$. Because both $C\subset S$ and $A\subset S$, we expect $C\cup A\subset S$. This necessitates that
+	\begin{gather*}
+	|C\cup A| \leq |S| \\
+	|C| + |A| - |C\cap A| \leq |S|
+	\end{gather*}
+	Rearranging terms and dividing through by $|S|$, we get a bound on the proportion of Americans which like both cheese and apples:
+	\begin{gather*}
+	|C\cap A| \geq \frac{|C|}{|S|} + \frac{|A|}{|S|} - 1.0 \\
+	|C\cap A| \geq 0.63 + 0.76 - 1.0 \\
+	|C\cap A| \geq 0.39
+	\end{gather*}
+	In English, no fewer than $39\%$ of Americans like both cheese and apples.
+\end{enumerate}
+\end{frame}
+\begin{frame}
+\frametitle{1.1 - Set Theory}
+\small
+\begin{enumerate}
+	\item[(8)] Recall that set difference $A - B$ entails the membership condition $x\in A \wedge x\notin B$. This means that the \textit{symmetric difference} $A*B$ entails the membership condition,
+	\begin{equation*}
+	(x\in A \wedge x\notin B)\vee(x\in B\wedge x\notin A)
+	\end{equation*}
+	By double-distributing the disjunction, we get to a CNF representation, and then set-difference:
+	\begin{gather*}
+	(x\in A\vee x\in B)\wedge(x\in A\vee x\notin A)\;\wedge \\ (x\notin B\vee x\in B)\wedge(x\notin B\vee x\notin A) \\
+	\Downarrow \\ 
+	(x\in A\vee x\in B)\wedge(x\notin B\vee x\notin A) \\
+	\Downarrow \\
+	(x\in A\vee x\in B)\wedge\neg(x\in A\wedge x\in B)
+	\end{gather*}
+	This shows logical equivalence in membership between $A*B$ and $(A\cup B) - (A\cap B)$.
+\end{enumerate}
+\end{frame}
+\begin{frame}
+\frametitle{1.1 - Set Theory}
+\small
+\begin{enumerate}
+	\item[(9a)] \quad For brevity, we argue non-symbolically. Every element of $(A+B)$ is either unique to $A$ or unique to $B$. Taking the symmetric difference, then, $(A+B)+C$ must result in those elements which are either unique to $A$, unique to $B$, unique to $C$, or common to all three of them. 
+	
+	\quad Likewise, the elements of $(B+C)$ are those elements unique to $B$ and unique to $C$. Taking the symmetric difference, we see that $A+(B+C)$ is the set of elements which are unique to $A$, unique to $B$, unique to $C$, or common to all three. Therefore, the sets are equal and so $(A+B)+C=A+(B+C)$. 
+\end{enumerate}
+\end{frame}
+\begin{frame}
+\frametitle{1.1 - Set Theory}
+\small
+\begin{enumerate}
+	\item[(9b)] Reducing the symmetric differences and distributing the leftmost conjunction,
+	\begin{gather*}
+	A\cap\left((B-C)\cup(C-B)\right) \\
+	\left(A\cap(B - C)\right)\cup\left(A\cap(C - B)\right)
+	\end{gather*}
+	We then use the fact that intersection distributes over set difference:
+	\begin{gather*}
+	\left((A\cap B)-(A\cap C)\right)\cup\left((A\cap C) - (A\cap B)\right)\\
+	\Downarrow \\
+	A\cdot B + A\cdot C
+	\end{gather*}
+	\item[(9c)] It's trivially the case that $A\cdot A = A\cap A = A$.
+\end{enumerate}
+\end{frame}
+\begin{frame}
+\frametitle{1.1 - Set Theory}
+\small
+\begin{enumerate}
+	\item[(9d)] Every element of $A$ is also (identically) an element of $A$, so there are no elements unique to either set. Therefore, $A+A=\emptyset$
+	\item[(9e)] Taking the left-symmetric-difference from $A$ of both sides of the equation and applying the associativity from part (a) with the cancellation property of part (d), we get:
+	\begin{gather*}
+	A+(A+B)=A+(A+C) \\
+	(A+A)+B=(A+A)+C) \\
+	\emptyset + B = \emptyset + C
+	\end{gather*}
+	Trivially, the symmetric difference of any set with the empty set is simply the set itself, which gives us $B = C$.
+\end{enumerate}
+\end{frame}
+\begin{frame}
+\frametitle{1.1 - Set Theory}
+\small
+\begin{enumerate}
+	\item[(10a)] The relation of having a common ancestor is reflexive, symmetric and transitive. Therefore, it is a valid equivalence relation.
+	\item[(10b)] The relation of living within 100 miles of each other is reflexive and symmetric, but not transitive. Therefore, it is not a valid equivalence relation.
+	\item[(10c)] The relation of having the same father is reflexive, symmetric and transitive. Therefore, it is a valid equivalence relation.
+	\item[(10d)] The relation of having the same absolute value is reflexive, symmetric and transitive. Therefore, it is a valid equivalence relation.
+	\item[(10e)] The relation of being strictly greater and strictly lesser than one another is impossible to satisfy. Therefore, it is not a valid equivalence relation.
+	\item[(10f)] The relation of two lines having the same slope in the plane is reflexive, symmetric and transitive. Therefore, it is a valid equivalence relation.
+\end{enumerate}
+\end{frame}
+\begin{frame}
+\frametitle{1.1 - Set Theory}
+\small
+\begin{enumerate}
+	\item[(11a)] Using only symmetry and transitivity, we do not have a guarantee that there exists a $b$ for $a$ such that $a\sim b$. Thus, this argument does not account for cases that each equivalence class $[a]$ are each only individual elements. 
+	\item[(11b)] If we include a property known as \textit{seriality}, which necessitates that every $a$ has a $b$ such that $a\sim b$. Under this assumption, both symmetry and transitivity imply reflexivity.
+\end{enumerate}
+\end{frame}
+\begin{frame}
+\frametitle{1.1 - Set Theory}
+\small
+\begin{enumerate}
+	\item[(12)] Clearly, $a\sim a$ because $0$ is a multiple of $n$. Likewise, if $a\sim b$, then it means $a - b = pn$ and so $b - a = -pn$, which is also a multiple of $n$, implying $b \sim a$. Finally, $a\sim b$ and $b\sim c$ mean that $a - b = pn$ and $b - c = qn$. Adding the equations together gives us $a - c = (p + q)n$, so $a\sim c$. Therefore, differing by a multiple of $n$ is a valid equivalence relation. Each of the equivalence classes are defined to be $\text{cl}(i) = \{x\in \Bbb Z \mid x\equiv i\pmod{n}\}$. Because every integer must have a remainder in $[n]$ after division by $n$, we have that $\text{cl}: [n] \to \Bbb Z$ is a surjection, and so there are at most $n$ equivalence classes. Because each equivalence class $\text{cl}(i)$ trivially contains $i$ for $0\leq i < n$, we have that there are at least $n$ equivalence classes. Therefore, there are exactly $n$ equivalence classes.
+\end{enumerate}
+\end{frame}
+\begin{frame}
+\frametitle{1.1 - Set Theory}
+\small
+\begin{enumerate}
+	\item[(13)] It's clear that being in the same mutually disjoint subset $A_\alpha$ is a valid equivalence relation. This follows from the demonstrable reflexivity, symmetry and transitivity. Moreover, the equivalence classes must be the distinct $A_\alpha$'s because that is how we defined our equivalence.
+\end{enumerate}
+\end{frame}
+\end{document}
