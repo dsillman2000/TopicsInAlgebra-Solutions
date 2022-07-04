@@ -202,7 +202,7 @@
 \frametitle{1.1 - Set Theory}
 \small
 \begin{enumerate}
-	\item[(12)] Clearly, $a\sim a$ because $0$ is a multiple of $n$. Likewise, if $a\sim b$, then it means $a - b = pn$ and so $b - a = -pn$, which is also a multiple of $n$, implying $b \sim a$. Finally, $a\sim b$ and $b\sim c$ mean that $a - b = pn$ and $b - c = qn$. Adding the equations together gives us $a - c = (p + q)n$, so $a\sim c$. Therefore, differing by a multiple of $n$ is a valid equivalence relation. Each of the equivalence classes are defined to be $\text{cl}(i) = \{x\in \Bbb Z \mid x\equiv i\pmod{n}\}$. Because every integer must have a remainder in $[n]$ after division by $n$, we have that $\text{cl}: [n] \to \Bbb Z$ is a surjection, and so there are at most $n$ equivalence classes. Because each equivalence class $\text{cl}(i)$ trivially contains $i$ for $0\leq i < n$, we have that there are at least $n$ equivalence classes. Therefore, there are exactly $n$ equivalence classes.
+	\item[(12)] Clearly, $a\sim a$ because $0$ is a multiple of $n$. Likewise, if $a\sim b$, then it means $a - b = pn$ and so $b - a = -pn$, which is also a multiple of $n$, implying $b \sim a$. Finally, $a\sim b$ and $b\sim c$ mean that $a - b = pn$ and $b - c = qn$. Adding the equations together gives us $a - c = (p + q)n$, so $a\sim c$. Therefore, differing by a multiple of $n$ is a valid equivalence relation. Each of the equivalence classes are defined to be $\text{cl}(i) = \{x\in \mathbb Z \mid x\equiv i\pmod{n}\}$. Because every integer must have a remainder in $[n]$ after division by $n$, we have that $\text{cl}: [n] \to \mathbb Z$ is a surjection, and so there are at most $n$ equivalence classes. Because each equivalence class $\text{cl}(i)$ trivially contains $i$ for $0\leq i < n$, we have that there are at least $n$ equivalence classes. Therefore, there are exactly $n$ equivalence classes.
 \end{enumerate}
 \end{frame}
 \begin{frame}
@@ -210,6 +210,121 @@
 \small
 \begin{enumerate}
 	\item[(13)] It's clear that being in the same mutually disjoint subset $A_\alpha$ is a valid equivalence relation. This follows from the demonstrable reflexivity, symmetry and transitivity. Moreover, the equivalence classes must be the distinct $A_\alpha$'s because that is how we defined our equivalence.
+\end{enumerate}
+\end{frame}
+\begin{frame}
+\frametitle{1.2 - Mappings}
+\small
+As a matter of notation, I invoke $\sqrt{t}$ as meaning the \textit{positive square root} of $t$, so $\sqrt{t} \geq 0$.
+\begin{enumerate}
+	\item[(1a)] $\sigma$ is surjective, but not injective. Every $t\in T$ is mapped to the set $\sigma^{-1}(t) = \{-\sqrt{t}, \sqrt{t}\}$.
+	\item[(1b)] $\sigma$ is both injective and surjective. Every $t\in T$ is mapped to its pre-image $\sigma^{-1}(t) = \sqrt{t}$.
+	\item[(1c)] $\sigma$ is injective, but not surjective. Only the perfect squares $t\in T$ have pre-images of the form $\sigma^{-1}(t) = \sqrt{t}$.
+	\item[(1d)] $\sigma$ is injective, but not surjective. Only the even integers $t\in T$ have pre-images of the form $\sigma^{-1}(t) = t/2$.
+\end{enumerate}
+\end{frame}
+\begin{frame}
+\frametitle{1.2 - Mappings}
+\small
+\begin{enumerate}
+	\item[(2)] I define the injection $\alpha: S\times T\to T\times S$ as the ``swap'' map, $\alpha: (s, t)\mapsto(t,s)$. This map is provably an injection because
+	\begin{equation*}
+	(t, s) = (t', s')\quad\Leftrightarrow\quad(s, t) = (s', t')
+	\end{equation*}
+	So, this injection, $\alpha$, is evidence of the one-to-one correspondence between the sets.
+	\item[(3a)] As in problem (2), the injection $\alpha: (S\times T)\times U\to S\times(T\times U)$ defined by $\alpha: ((s, t), u)\mapsto(s,(t,u))$ evidences a one-to-one correspondence between the sets.
+	\item[(3b)] We define the injection $\alpha: (S\times T)\times U\to S\times T\times U$ via the map $\alpha: ((s,t),u)\mapsto(s,t,u)$, which evidences the one-to-one correspondence between the sets.
+\end{enumerate}
+\end{frame}
+\begin{frame}
+\frametitle{1.2 - Mappings}
+\small
+\begin{enumerate}
+	\item[(4a)] If there's a one-to-one correspondence between $S$ and $T$, then there exists an injection $\sigma: S\to T$ satisfying $\sigma(s)=\sigma(s')\Rightarrow s = s'$. This injection induces an inverse injection, $\sigma^{-1}: T\to S$ defined by $\sigma^{-1}(t)=\left\{t\in T \mid \bigcup_{s\in S}\sigma(s) = t\right\}$. The injection $\sigma^{-1}$ evidences a one-to-one correspondence between $T$ and $S$.
+	\item[(4b)] Suppose that the injections $\alpha: S\to T$ and $\beta: T\to U$ evidence the one-to-one correspondences between $S$ and $T$, and $T$ and $U$ respectively. Then we can define the composed injection $\sigma: S\to U$ via the map $\sigma: s\mapsto \beta(\alpha(s))$. Because $\beta(t)=\beta(t')\Rightarrow t=t'$ and $\alpha(s)=\alpha(s')\Rightarrow s=s'$, it follows that $\sigma(s)=\sigma(s')\Rightarrow s=s'$ and thus $\sigma$ is injective. This shows that there is a one-to-one correspondence between $S$ and $U$.
+\end{enumerate}
+\end{frame}
+\begin{frame}
+\frametitle{1.2 - Mappings}
+\small
+\begin{enumerate}
+	\item[(5)] Because the identity automorphism $\iota: s\mapsto s$, it's clear that $\sigma\circ\iota: s\mapsto \sigma(s)$, which is identical to the map $\sigma: s\mapsto \sigma(s)$. An identical argument holds for $\iota\circ\sigma$, and so it holds that $\sigma=\sigma\circ\iota=\iota\circ\sigma$.
+	\item[(6)] Because we know that $|S^*|>|S|$ for any set, it is impossible for any mapping of the $|S|$ elements of $S$ to cover the $|S^*|$ elements of $S^*$. Therefore, no mapping $S\to S^*$ will ever be surjective.
+	\item[(7)] We can consider constructing an element $\sigma\in A(S)$ as a sequence of choosing unique images $\sigma(s_i)$ for each $s_i \in S$, $1\leq i \leq n$. $s_1$ could have any one of the $n$ elements of $S$ as its image. Each subsequent $s_i$ will have one fewer option for its image. This generates a set of $n!$ distinct automorphisms, and this set is $A(S)$.
+\end{enumerate}
+\end{frame}
+\begin{frame}
+\frametitle{1.2 - Mappings}
+\small
+\begin{enumerate}
+	\item[(8a)] Suppose for the sake of argument that $\sigma: S\to S$ is surjective, but not injective. Specifically, suppose that there exists an $s^*\in S$ with more than one preimage, $\gamma = \sigma^{-1}(s^*)$. Then, it follows that $\sigma$ is still surjective if its restriction $\bar{\sigma}: S-\gamma\to S-{s^*}$ is surjective (note that we must remove $\gamma$ from our domain in order to enforce the constraint that an element of the domain cannot have two different images). However, the domain of $\bar{\sigma}$ is smaller than its codomain, which means that $\bar{\sigma}$ cannot be surjective because no element of the domain can map to two different images. Therefore, neither $\bar{\sigma}$ nor $\sigma$ itself can be surjective without also being injective.
+\end{enumerate}
+\end{frame}
+\begin{frame}
+\frametitle{1.2 - Mappings}
+\small
+\begin{enumerate}
+	\item[(8b)] Using the reverse argument from problem (8a), we suppose for the sake of contradiction that $\sigma$ is not surjective. Because it \textit{is} injective, we have that every element $s\in S$ in the domain is mapped to a unique image $\sigma(s)\in S$. Because we assume it is not surjective, we assume that there is an $s^*\in S$ which does not have a preimage. So, $\sigma$ maps the $|S|$ elements of $S$ to the $|S| - 1$ elements of $S - \{s^*\}$. By the pigeonhole principle, $\sigma$ must map two distinct inputs to the same image, and so $\sigma$ cannot be injective. We have a contradiction, so we prove the result
+	\begin{equation*}	
+	\sigma\text{ is injective}\quad\Leftrightarrow\quad\sigma\text{ is surjective}
+	\end{equation*}
+\end{enumerate}
+\end{frame}
+\begin{frame}
+\frametitle{1.2 - Mappings}
+\small
+\begin{enumerate}
+	\item[(8c)] \quad Consider the mapping $\sigma: \mathbb Z\to\mathbb Z$ via the assignment $n\mapsto \lfloor n / 2\rfloor$. Clearly, $\sigma$ is surjective because every integer can be doubled to result in one of its preimages. However, it is not injective because $n$ has the multiple preimages $\{2n, 2n+1\}$. So, $\sigma$ is an infinite counter-example to (8a).
+	
+	\quad On the other hand, the mapping $\sigma: \mathbb Z \to \mathbb Z$ via the assignment $n\mapsto 2n$ is clearly injective because every integer can be doubled to result in a unique image. However, it is not surjective because the odd integers have no preimages (they are not the result of any integer being doubled). This evidences an infinite counter-example to (8b).
+\end{enumerate}
+\end{frame}
+\begin{frame}
+\frametitle{1.2 - Mappings}
+\small
+\begin{enumerate}
+	\item[(9a)] Consider the maps 
+	\begin{align*}	
+	\sigma: [2]\to [2]\quad &\quad \sigma: i\mapsto 1 \\
+	\tau: [2]\to [1]\quad &\quad \tau: 1\mapsto 1
+	\end{align*}
+	Clearly, $\sigma$ is not surjective because $2$ has no preimage. However, $\sigma\circ\tau$ is surjective because $1$ does have a preimage. So, the converse of the lemma is false.
+	\item[(9b)] Consider the maps
+	\begin{align*}
+	\sigma: [1]\to [2]\quad &\quad \sigma: 1\mapsto 1 \\
+	\tau: [2]\to [2]\quad &\quad \tau: i\mapsto 1
+	\end{align*}
+	Clearly, $\tau$ is not injective because both $1$ and $2$ are mapped to the same image, $1$. However, $\sigma\circ\tau$ is injective because $1$ has only one preimage. So, the converse of the lemma is false.
+\end{enumerate}
+\end{frame}
+\begin{frame}
+\frametitle{1.2 - Mappings}
+\small
+\begin{enumerate}
+	\item[(10)] We define the map $\kappa: \mathbb Z \to \mathbb Q$ via the assignment based on prime factorization of each integer:
+	\begin{equation*}
+	p_1^{r_1} p_2^{r_2}\cdots p_n^{r_n}\quad\mapsto\quad \frac{p_1^{r_1}}{p_2^{r_2}\cdots p_n^{r_n}}
+	\end{equation*}
+	It's clear that the numerator and denominator are coprime, and so the image of each integer is a valid rational. Moreover, every rational has at most one preimage. If two images $(p/q)$ and $(p'/q')$ are equal, then it means that their components $p=p'$ and $q=q'$, and so their preimages are equal, $pq = p'q'$. This shows that $\kappa$ is an injection and so there is a one-to-one correspondence between the integers and the rationals.
+\end{enumerate}
+\end{frame}
+\begin{frame}
+\frametitle{1.2 - Mappings}
+\small
+\begin{enumerate}
+	\item[(11a)] Trivially, because $\sigma$ is a mapping into $T$, and $\sigma(A) = \sigma_A(A)$, $\sigma_A$ is thus a mapping $A\to T$.
+	\item[(11b)] If we assume that $\sigma$ is injective, then we know that every element of $\sigma(S)$ is the image of exactly one $s\in S$. Because $\sigma(A)\subset\sigma(S)$, we have that every element of $\sigma(A)$ is the image of exactly one $a\in A$. Because $\sigma(A) = \sigma_A(A)$, the same property is true of $\sigma_A$'s domain. Therefore, $\sigma_A$ is injective. 
+	\item[(11c)] If the set of elements, $\bar{T}\subset T$, in $T$ which have more than one preimage is disjoint from $\sigma(A)$ such that $\sigma(A)\cap\bar{T}=\emptyset$, then $\sigma$ will still have the property of mapping each $a\in A$ to a unique image $\sigma(a)\in\sigma(A)$. Therefore, $\sigma_A$ can still be injective, even if $\sigma$ as a whole is not.
+\end{enumerate}
+\end{frame}
+\begin{frame}
+\frametitle{1.2 - Mappings}
+\small
+\begin{enumerate}
+	\item[(12)] First, we recognize that $\sigma(A)\subset A$, so $\sigma\circ\sigma(A)\subset A$. On the other hand, $\sigma_A(A) = \sigma(A) \subset A$, and likewise for $\sigma_A\circ\sigma_A(A)$. Because of this equality, we have that $\sigma\circ\sigma(A) = \sigma_A\circ\sigma_A(A)$, and so the domain of both $(\sigma\circ\sigma)_A$ and $\sigma_A\circ\sigma_A$ are mapped to the same images, and so the functions are the same.
+	\item[(13a)] Consider the proper subset $5\mathbb Z \subset \mathbb Z$. The injection $\sigma: x\mapsto 5x$ evidences a one-to-one correspondence between the sets, and so $\mathbb Z$ is infinite.
+	\item[(13b)] Consider the proper subset $\mathbb R_{>0} \subset \mathbb R$. The injection $\sigma: x\mapsto e^x$ evidences a one-to-one correspondence between the sets, and so $\mathbb R$ is infinite.
+	\item[(13c)] Because $A$ is infinite, it has a subset $\bar{A}\subset A\subset S$ with which it has a one-to-one correspondence. This means that $S$ also has the same one-to-one correspondence with $\bar{A}$ and so $S$ is also infinite.
 \end{enumerate}
 \end{frame}
 \end{document}
