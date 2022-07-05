@@ -327,4 +327,31 @@ As a matter of notation, I invoke $\sqrt{t}$ as meaning the \textit{positive squ
 	\item[(13c)] Because $A$ is infinite, it has a subset $\bar{A}\subset A\subset S$ with which it has a one-to-one correspondence. This means that $S$ also has the same one-to-one correspondence with $\bar{A}$ and so $S$ is also infinite.
 \end{enumerate}
 \end{frame}
+\begin{frame}
+\frametitle{1.2 - Mappings}
+\small
+\begin{enumerate}
+	\item[(14)] Let ``$S\to\mathbb Z$'' denote that there is a one-to-one correspondence, called $\alpha$, between $S$ and $\mathbb Z$. Because $\mathbb Z\to\mathbb Q$ via the mapping $\kappa$ from problem (10) and the transitivity proved in problem (4b), we have $S\to\mathbb Q$. Moreover, via the injection $f: \mathbb Q\to \mathbb Z\times\mathbb Z$ with map $p/q \mapsto (p, q)$, we establish $\mathbb Q \to\mathbb Z\times\mathbb Z$. Finally, by inverting and pairng $\alpha$, we can inject $A^{-1}: \mathbb Z\times \mathbb Z\to S\times S$ via the assignment $A^{-1}: (p,q)\mapsto (\alpha^{-1}(p), \alpha^{-1}(q))$. This injection completes our transitive chain by implying $S\to S\times S$, as desired.
+\end{enumerate}
+\end{frame}
+\begin{frame}
+\frametitle{1.2 - Mappings}
+\small
+\begin{enumerate}
+	\item[(15)] \quad First, we show that there exists a surjective map $\sigma: U\to S$. This follows from the existence of surjective maps $\alpha: U\to T$ and $\beta: T\to S$, which compose to give $\sigma = \alpha\circ\beta$. 
+	
+	\quad Second, we consider a hypothetical surjective map $\gamma: S\to U$. If such a map existed, its inputs could first be mapped into $T$, then mapped surjectively onto $U$. This violates our assumption that there does not exist a surjective map between $T$ and $U$. So, there cannot exist a surjective map from $S\to U$. Therefore, $S<U$.
+\end{enumerate}
+\end{frame}
+\begin{frame}
+\frametitle{1.2 - Mappings}
+\small
+\begin{enumerate}
+	\item[(16)] \quad If we start by supposing that $m<n$, then we can easily find a surjective map $\sigma: T\to S$ by the pigeonhole principle. Moreover, we cannot form a surjective map $\gamma: S\to T$. If we assign every $s\in S$ in the domain to a unique image $t\in T$, then there will always be at least one element $t^*\in T$ with no preimage in $S$. Therefore, there can be no surjective map from $S\to T$. So, $S<T$.
+	
+	\quad Conversely, if we start by supposing that $S<T$, then it is evident that there cannot exist a surjective map $S\to T$. If $m\geq n$, then we can easily find a surjective map onto $T$ by the pigeonhole principle. Therefore, this enforces that $m<n$.
+	
+	\quad Both directions prove that $S<T$ for finite sets $S,T$ equivalently means $m<n$.
+\end{enumerate}
+\end{frame}
 \end{document}
