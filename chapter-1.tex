@@ -217,10 +217,10 @@
 \small
 As a matter of notation, I invoke $\sqrt{t}$ as meaning the \textit{positive square root} of $t$, so $\sqrt{t} \geq 0$.
 \begin{enumerate}
-	\item[(1a)] $\sigma$ is surjective, but not injective. Every $t\in T$ is mapped to the set $\sigma^{-1}(t) = \{-\sqrt{t}, \sqrt{t}\}$.
-	\item[(1b)] $\sigma$ is both injective and surjective. Every $t\in T$ is mapped to its pre-image $\sigma^{-1}(t) = \sqrt{t}$.
-	\item[(1c)] $\sigma$ is injective, but not surjective. Only the perfect squares $t\in T$ have pre-images of the form $\sigma^{-1}(t) = \sqrt{t}$.
-	\item[(1d)] $\sigma$ is injective, but not surjective. Only the even integers $t\in T$ have pre-images of the form $\sigma^{-1}(t) = t/2$.
+	\item[(1a)] $\sigma$ is surjective, but not injective. Every $t\in T$ has preimages $\sigma^{-1}(t) = \{-\sqrt{t}, \sqrt{t}\}$.
+	\item[(1b)] $\sigma$ is both injective and surjective. Every $t\in T$ is mapped to its preimage $\sigma^{-1}(t) = \sqrt{t}$.
+	\item[(1c)] $\sigma$ is injective, but not surjective. Only the perfect squares $t\in T$ have preimages of the form $\sigma^{-1}(t) = \sqrt{t}$.
+	\item[(1d)] $\sigma$ is injective, but not surjective. Only the even integers $t\in T$ have preimages of the form $\sigma^{-1}(t) = t/2$.
 \end{enumerate}
 \end{frame}
 \begin{frame}
@@ -352,6 +352,210 @@ As a matter of notation, I invoke $\sqrt{t}$ as meaning the \textit{positive squ
 	\quad Conversely, if we start by supposing that $S<T$, then it is evident that there cannot exist a surjective map $S\to T$. If $m\geq n$, then we can easily find a surjective map onto $T$ by the pigeonhole principle. Therefore, this enforces that $m<n$.
 	
 	\quad Both directions prove that $S<T$ for finite sets $S,T$ equivalently means $m<n$.
+\end{enumerate}
+\end{frame}
+\begin{frame}
+\frametitle{1.3 - The Integers}
+\small
+\begin{enumerate}
+	\item[(1)] $a\mid b$ implies that $b=pa$, while $b\mid a$ implies that $a=qb$. This system is solved with $p=q\in\{-1, 1\}$, and so $a=\pm b$.
+	\item[(2)] $b$ being a divisor of $g$ and $h$ means we can express $g=\alpha b$ and $h=\beta b$. This means that $mg + nh = m\alpha b + n\beta b = (m\alpha + n\beta)b$, which clearly has $b$ as a divisor.
+	\item[(3)] Clearly, $\left[a, b\right]$ exists because it can always be at most $ab$, which always exists. If $a$ and $b$ share a common divisor, $k$, then $ab/k$ satisfies condition (a), but not necessarily condition (b). This is because, unless $k$ is the greatest common divisor of $a$ and $b$, then there will be a lesser common multiple $ab/k$ which ultimately satisfies condition (b). Therefore, $\left[a, b\right]$ exists and is of the form $ab/(a,b)$.
+\end{enumerate}
+\end{frame}
+\begin{frame}
+\frametitle{1.3 - The Integers}
+\small
+\begin{enumerate}
+	\item[(4)] Suppose that the prime decomposition of $a$ and $b$ are $a = \alpha_1^{p_1}\cdots\alpha_n^{p_n}$ and $b = \beta_1^{q_1}\cdots\beta_m^{p_m}$, respectively, where each $\alpha_i^{p_i}$ and $\beta_i^{q_i}$ are distinct powers of primes. Because $(a,b) = 1$, it means that $a$ and $b$ have no prime factors in common. So, the set of prime powers $A = \{\alpha^p\}_i$ and $B = \{\beta^q\}_i$ are disjoint. However, if $a\mid x$ and $b\mid x$, this means that the set of prime powers of $x$, denoted $X$, contains both $A$ and $B$ as (disjoint) subsets. Thus, $A\cup B \subset X$ with $A\cup B$ being the set of prime powers of $ab$. This implies that $(ab)\mid x$, as desired.
+\end{enumerate}
+\end{frame}
+\begin{frame}
+\frametitle{1.3 - The Integers}
+\small
+\begin{enumerate}
+	\item[(5a)] \quad First, we show that $p_1^{\delta_1}\cdots p_k^{\delta_k}$ is a common divisor of $a$ and $b$. Because $\delta_i = \min\{\alpha_i, \beta_i\}$, it's clear that $p_i^{\delta_i} \mid p_i^{\alpha_i}$ because $\delta_i \leq\alpha_i$ and, likewise, $p_i^{\delta_i}\mid p_i^{\beta_i}$ because $\delta_i\leq\beta_i$. Therefore, $p_1^{\delta_1}\cdots p_k^{\delta_k}$ as a whole must at least be a common divisor of both $a$ and $b$.
+	
+	\quad Second, we show that there cannot be a greater common divisor. Clearly, the prime factorization of $(a,b)$ cannot contain any prime $q_i$ which isn't in $\{p\}_i$, because then it wouldn't divide $a$ or $b$. So, a greater common divisor would need to have that any $\delta_i > \alpha_i$ or $\delta_i > \beta_i$ for one or more $i$. However, it's trivial that $p_i^{\delta_i} \nmid p_i^{\alpha_i}$ or $p_i^{\delta_i}\nmid p_i^{\beta_i}$ for those $i$, implying then that such a number could not divide both $a$ and $b$ under these conditions. Therefore, the \textit{greatest} common divisor must be $(a,b) = p_1^{\delta_1}\cdots p_k^{\delta_k}$.
+\end{enumerate}
+\end{frame}
+\begin{frame}
+\frametitle{1.3 - The Integers}
+\small
+\begin{enumerate}
+	\item[(5b)] \quad As in the last problem, we begin by confirming that $p_1^{\gamma_1}\cdots p_k^{\gamma_k}$ is a common multiple of $a$ and $b$. Sure enough, because $\gamma_i = \max\{\alpha_i, \beta_i\}$, it follows that $p_i^{\alpha_i}\mid p_i^{\gamma_i}$ because $\gamma_i\geq \alpha_i$ and $p_i^{\beta_i}\mid p_i^{\gamma_i}$ because $\gamma_i\geq\beta_i$. This implies that $p_1^{\gamma_1}\cdots p_k^{\gamma_k}$ is a multiple of both $a$ and $b$. 
+	
+	\quad Now, we show that there cannot be a lesser common multiple. As in the last problem, it's clear that no foreign prime power $q_i$ can appear in the prime factorization of $\left[a,b\right]$. If we could set any $\gamma_i < \alpha_i$ or $\gamma_i < \beta_i$, then either $p_i^{\alpha_i}\nmid p_i^{\gamma_i}$ or $p_i^{\beta_i}\nmid p_i^{\gamma_i}$, making it impossible for either $a$ or $b$ to divide $\left[a,b\right]$, which is a contradiction. Therefore, the \textit{least} common multiple is $\left[a,b\right] = p_1^{\gamma_1}\cdots p_k^{\gamma_k}$.
+\end{enumerate}
+\end{frame}
+\begin{frame}
+\frametitle{1.3 - The Integers}
+\small
+\begin{enumerate}
+	\item[(6)] \quad The last line of the Euclidean algorithm will state that $r_{n-1} = q_n r_n$, which is equivalent to stating that $r_n\mid r_{n-1}$. The second-to-last line will read $r_{n-2} = q_{n-1} r_{n-1} + r_n$, which can be restated as $r_{n-2} = q_{n-1} q_n r_n + r_n$, which emphasizes that $r_n\mid r_{n-2}$. We continue this substitutive process up the chain until we reach the second-to-top line, which will read $b=q_1 r_1 + r_2$. Because $r_n\mid r_1$ and $r_n\mid r_2$, our divisibility chain reaches $r_n\mid b$, which substitutes into the first line with $a = q_0 b + r_1$, which finally shows $r_n\mid a$. So, we've shown $r_n$ is a common divisor of both $a$ and $b$.
+	
+	\quad As we've shown, if there existed a larger common divisor $r^*>r_n$, such a common divisor would divide $a$, $b$, and $r_1$. If it divided $b$ and $r_1$, then it would necessarily divide $r_2$ and upward until $r_i=0$. Therefore, $r_n = r^*$ by definition (being the last remainder until $r_i = 0$). So, $r_n = (a, b)$.
+\end{enumerate}
+\end{frame}
+\begin{frame}
+\frametitle{1.3 - The Integers}
+\small
+\begin{enumerate}
+	\item[(7a)] Executing the Euclidean algorithm,
+	\begin{align*}
+	1128 &= 34\cdot 33 + 6 \\
+	33 &= 5\cdot 6 + 3 \\
+	6 &= 2\cdot 3 + 0
+	\end{align*}
+	Which tells us that $(1128, 33) = 3$.
+	
+	\item[(7a)] Executing the Euclidean algorithm,
+	\begin{align*}
+	6540 &= 5\cdot 1206 + 510 \\
+	1206 &= 2\cdot 510 + 86 \\
+	510 &= 5\cdot 86 + 80 \\
+	86 &= 1\cdot 80 + 6 \\
+	80 &= 13\cdot 6 + 2 \\
+	6 &= 3\cdot 2 + 0
+	\end{align*}
+	Which tells us that $(6540, 1206) = 2$.
+\end{enumerate}
+\end{frame}
+\begin{frame}
+\frametitle{1.3 - The Integers}
+\small
+\begin{enumerate}
+	\item[(8)] If we suppose that no prime $p\leq\sqrt{n}$ divides $n$, then it means that the prime factorization of $n=p_1^{r_1}\cdots p_k^{r_k}$. does not contain any primes $1 < p_i \leq \sqrt{n}$. If the factorization contains multiple primes $p_i,p_j > \sqrt{n}$, then their product will be $p_i p_j > n$, which violates our assumption that $n=p_1^{r_1}\cdots p_k^{r_k}$. Therefore, such an $n$ can have a prime factorization which consists of only one prime with power less than $2$. So, $n = p$ and thus $n$ is prime.
+\end{enumerate}
+\end{frame}
+\begin{frame}
+\frametitle{1.3 - The Integers}
+\small
+\begin{enumerate}
+	\item[(9)] \quad We begin by supposing $n$ is prime. By definition, $n$'s only divisors are $\pm 1$ and $\pm n$. So, if $1 < a = kn$, then clearly $n\mid a$. Otherwise, $a$ will share no common divisor with $n$ and thus $(a,n) = 1$.
+	
+	\quad Conversely, we start by supposing either $n\mid a$ or $(a,n) = 1$. The former implies $a = kn$. The latter implies that $a$ and $n$ share no common divisors. These two facts necessitate that $n$ has no common divisors with any $a$ which is not a multiple of $n$. This is equivalent to claiming that the divisors of $n$ are only $\pm n$ and $\pm 1$. Therefore, by definition, $n$ must be prime.
+\end{enumerate}
+\end{frame}
+\begin{frame}
+\frametitle{1.3 - The Integers}
+\small
+\begin{enumerate}
+	\item[(10a)] Suppose for the sake of contradiction that, despite presuppositions (1) and (2), there exists an $n^* \geq m_0$ such that $P(n^*)$ is false. Clearly, by presupposition (1), $n^*\neq m_0$. However, by recursively applying presupposition (2), we build the chain of implications:
+	\begin{equation*}
+	P(m_0)\Rightarrow P(m_0 + 1)\Rightarrow\cdots\Rightarrow P(n^*)
+	\end{equation*}
+	Because we've assumed that $P(m_0)$ is true and true cannot imply false, this chain propagates truth all the way through to $P(n^*)$, which necessitates that $P(n^*)$ is true. This contradicts our assumption that $P(n^*)$ is false, and so any and all $n\geq m_0$ must satisfy $P(n)=\text{true}$.
+\end{enumerate}
+\end{frame}
+\begin{frame}
+\frametitle{1.3 - The Integers}
+\small
+\begin{enumerate}
+	\item[(10b)] In presupposition (2), we substitute $m = m_0+1$. This means that, because $P(a) = P(m_0)$ is presupposed to be true by (1), then $P(m) = P(m_0 + 1)$ is true. Repeating this process $k$ times allows us to show that the truth of $P(m_0)$ alone implies the truth of $P(m_0 + k)$. Because every $n \geq m_0$ is of the form $n = m_0 + k$ for $k \geq 0$, this shows that every $n\geq m_0$ can be proven to be true by repeating the above process an arbitrary number of times.
+\end{enumerate}
+\end{frame}
+\begin{frame}
+\frametitle{1.3 - The Integers}
+\small
+\begin{enumerate}
+	\item[(11)] \quad Every element of $[i]$ is of the form $a = \alpha n + i$ and every element of $[j]$ is of the form $b = \beta n + j$. Adding these two arbitrary elements together, we get the sum 
+	\begin{equation*}	
+	a+b = \alpha n + \beta n + i + j = (\alpha + \beta)n + (i + j)
+	\end{equation*}
+	Which is of the form $kn + (i + j)$, and so $a + b \in [i + j]$. This shows that addition is well defined under $[i] + [j] = [i + j]$. 
+	
+	\quad Likewise, multiplying the arbitrary elements $a\in [i]$, $b\in [j]$ yield the product
+	\begin{equation*}
+	ab = \alpha \beta n^2 + \alpha j n + \beta i n + ij = (\alpha\beta n + \alpha j + \beta i)n + ij
+	\end{equation*}
+	Which is of the form $kn + ij$, and so $ab\in [ij]$. This shows that multiplication is well defined under $[i][j] = [ij]$.
+\end{enumerate}
+\end{frame}
+\begin{frame}
+\frametitle{1.3 - The Integers}
+\small
+\begin{enumerate}
+	\item[(12a)] Because $i,j \in \mathbb Z$ and addition is commutative in that context, we use
+	\begin{equation*}
+	[i] + [j] = [i + j] = [j + i] = [j] + [i]
+	\end{equation*}
+	\item[(12b)] As in (12a), we inherit the commutativity of multiplication in $\mathbb Z$, we use
+	\begin{equation*}
+	[i][j] = [ij] = [ji] = [j][i]
+	\end{equation*}
+	\item[(12c)] Because $i,j,k\in\mathbb Z$ and addition is associative in that context, we use
+	\begin{align*}
+	\left([i] + [j]\right) + [k] &= [i+j] + [k] = [(i + j) + k] \\
+	&= [i + (j + k)] = [i] + [j+k] \\
+	&= [i] + \left([j] + [k]\right)
+	\end{align*}
+\end{enumerate}
+\end{frame}
+\begin{frame}
+\frametitle{1.3 - The Integers}
+\small
+\begin{enumerate}
+	\item[(12d)] As in (12c), we inherit the associativity of multiplication in $\mathbb Z$, we use
+	\begin{align*}
+	\left([i][j]\right)[k] = [ij][k] = [(ij)k] = [i(jk)] = [i][jk] = [i]\left([j][k]\right)
+	\end{align*}
+	\item[(12e)] Because $i,j,k\in\mathbb Z$ and multiplication distributes over addition in that context, we use
+	\begin{align*}
+	[i]\left([j] + [k]\right) &= [i][j+k] = [i(j+k)] \\
+	&= [ij + ik] = [ij] + [ik]
+	\end{align*}
+	\item[(12f)] Because the integers have a $0$ element, we use
+	\begin{align*}
+	[0] + [i] = [0 + i] = [i]
+	\end{align*}
+	\item[(12g)] Because the integers have a $1$ element, we use
+	\begin{align*}
+	[1][i] = [1i] = [i]
+	\end{align*}
+\end{enumerate}
+\end{frame}
+\begin{frame}
+\frametitle{1.3 - The Integers}
+\small
+\begin{enumerate}
+	\item[(13)] If $(a,n) = 1$, then equivalently there exist $b, q$ such that $ab + nq = 1$. This means that $[ab] = [1]$, and thus $[a][b] = [1]$, so there exists an equivalence class, $[b]\in J_n$ such that $[a][b] = [1]$.
+	\item[(14)] Consider the first $p-1$ multiples of $a$, $\left\{a, 2a, \ldots, (p-1)a\right\}$. Each of these must be in a unique equivalence class, $[ia]\in J_p$. This gives us a system of $(p-1)$ congruences, $ia\in[ia]=[\alpha_i]$ where $0\leq \alpha_i\leq p-1$. Multiplying all of these congruences together gives us the congruence,
+	\begin{equation*}
+	(p-1)!a^{(p-1)}\equiv (p-1)!\pmod{p}
+	\end{equation*}
+	When we divide both sides of the expression by $(p-1)!$, we are left with the congruence
+	\begin{equation*}
+	a^{(p-1)} \equiv 1\pmod{p}
+	\end{equation*}
+	Which equivalently tells us that $a^p\equiv a\pmod{p}$.
+\end{enumerate}
+\end{frame}
+\begin{frame}
+\frametitle{1.3 - The Integers}
+\small
+\begin{enumerate}
+	\item[(15)] We are essentially asking if there exists integers $p, q$ such that we can equate $mp+a=nq+b$. Moreover, because the greatest common divisor is $(m,n)=1$, we can write $um+vn=1$. Multiplying this expression by $(a-b)$ gives us an equation, $(a-b)um+(a-b)vnb = a-b$, which rearranges to,
+	\begin{equation*}
+	(b-a)um + a = (a-b)vn + b
+	\end{equation*}		
+	This shows that our solutions are $p=(b-a)u$ and $q=(a-b)v$, which each give the solution, so such a system of equations is always solvable.
+\end{enumerate}
+\end{frame}
+\begin{frame}
+\frametitle{1.3 - The Integers}
+\small
+\begin{enumerate}
+	\item[(16)] Let's call our product $\chi = x_1 \cdots x_n$.  Suppose for the sake of contradiction that a prime $p \mid\chi$, despite $p\nmid x_i$ for any $i$. If we expand each $x_i$ into its prime factorization, then none of the primes can equal $p$ to enforce the non-divisibility. However, the product of all of the prime factorizations must equal $\chi$, which is supposed to satisfy $p\mid\chi$. This implies that, for some prime or product of primes $q$, $p\mid q$, which is absurd. Therefore, $p$ must divide at least one $x_i$ in the product, $\chi$. 
+\end{enumerate}
+\end{frame}
+\begin{frame}
+\frametitle{1.3 - The Integers}
+\small
+\begin{enumerate}
+	\item[(17)] \quad We start by supposing that $n$ is prime. Then, if $[a][b]=[0]$, then $[ab]=[0]$, and thus we can express $ab = kn$. Clearly, such an equality can only hold if $n\mid b$ or $n\mid b$, which is equivalent to stating that either $[a]=[0]$ or $[b]=[0]$.
+	
+	\quad Conversely, we can start from $[a][b]=[0]$ implying $[a]=[b]=[0]$. If we suppose that $n$ has a nontrivial divisor, $1<q<n$, then we can define $a=q$ and $b= n/q$, giving $ab = n \in [0]$, despite $a,b\notin[0]$. This violates our assumption, so we prove by contradiction that such an implication can only hold if $n$ is prime.
 \end{enumerate}
 \end{frame}
 \end{document}
