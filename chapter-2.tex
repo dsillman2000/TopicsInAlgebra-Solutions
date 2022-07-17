@@ -168,4 +168,320 @@
 	\item[(13)] Consider the set $G = \mathbb Z$ closed under the associative product $a\cdot b = a$. Trivially, we have $a\cdot 1 = a$, and the $y(a)$ which satisfies $y(a)\cdot a = 1$ will be $y(a) = 1$ for all $a$. Clearly, this satisfies all conditions without forming a group, as neither identity nor inverses are unique.
 \end{enumerate}
 \end{frame}
+\begin{frame}
+\frametitle{2.3 - Groups}
+\small
+\begin{enumerate}
+	\item[(14)] \quad The cancellation properties tell us that $x\cdot a = y\cdot a\Rightarrow x=y$. This means that both the left- and right-multiplication maps $l_a: x\mapsto a\cdot x$, $r_a: x\mapsto x\cdot a$ are injective, and because their domains and codomains are \textit{finite}, the maps are bijective. Thus, the cosets $aG = Ga = G$. 
+	
+	\quad This also means that, for any element $a\in G$, there must be some element $\varepsilon(a)\in G$ which solves $a\cdot\varepsilon(a) = a$. Left-multiplying both sides by any other element $b\in G$ shows that this $\varepsilon(a)$ must be universal, as $b\cdot a\cdot \varepsilon(a) = b\cdot a$. Therefore, there must be an identity element $e\in G$.
+	
+	\quad Similarly, there must be an element $a^{-1}$ in $G$ which solves $a\cdot a^{-1} = e$ for any $a$. Right-multiplying by $a$ and re-associating, we see that this $a^{-1}$ also solves $a\cdot (a^{-1}\cdot a) = e\cdot a = a = a\cdot e$, and so inverses are included in $G$ for every element.
+\end{enumerate}
+\end{frame}
+\begin{frame}
+\frametitle{2.3 - Groups}
+\small
+\begin{enumerate}
+	\item[(15a)] We know that remainder classes, $[i],[j]\in J_p$ are finite and satisfy associativity and closure under multiplication. To show cancellation is satisfied, we first note that every integer $i$ has $\gcd\left(i, p\right) = 1$, meaning there exist integers $a,b$ solving $ai + bj = 1$, meaning there is an $[a]\in J_p$ which multiplies with $[i]$ to yield the remainder class $[1]$, and so we can use:
+	\begin{align*}
+	[i]\cdot[j] &= [i]\cdot[k] \\
+	[a]\cdot[i]\cdot[j] &= [a]\cdot[i]\cdot[k] \\
+	[1]\cdot[j] &= [1]\cdot[k] \\
+	[j] &= [k]
+	\end{align*}
+	The same argument shows that right cancellation is satisfied. So, by problem (14), the integers modulo $p$ are a group under multiplication.
+\end{enumerate}
+\end{frame}
+\begin{frame}
+\frametitle{2.3 - Groups}
+\small
+\begin{enumerate}
+	\item[(15b)] We write the set of coprime-to-$n$ integers as $C_n$. This set still satisfies the invariant that $\gcd\left(i, n\right) = 1$ for any $i\in C_n$. Therefore, each and every element can be made to solve $[i]\cdot[i^{-1}]=[1]$ which, as in part (a), entails both cancellation properties.
+	\item[(16)] Consider $J_p$ for prime $p$ under the associative product $a*b = a$. Clearly, left-multiplication is injective, thus bijective, and so we have the right-cancellation property, $a\cdot b = c\cdot b$ implies $a = c$ by definition. We don't have the left-cancellation property, as the value of $b*a$ has nothing to do with the right operand. As a result, as discussed in problem (13), this associative product does not a group make.
+\end{enumerate}
+\end{frame}
+\begin{frame}
+\frametitle{2.3 - Groups}
+\small
+\begin{enumerate}
+	\item[(17)] The set of integers, $\mathbb Z$, under multiplication is associative, closed and satisfies both cancellation properties. However, because there is no method of inverting an arbitrary integer into another integer, e.g. solving $x\cdot y = 1$ with $x$ or $y$ being greater than $1$. Therefore, $(\mathbb Z, \cdot )$ cannot be a group and we have an infinite example which fails the conclusion of problem (14).
+	\item[(18)] We construct a non-abelian group $G_n$ of order $|G_n| = 2n$ via the actions of \textit{rotation} and \textit{reflection} on a regular $n$-gon. This group has the act $r$ of rotating by $2\pi / n$ radians (shifting vertex indices) which satisfies $r^n = e$. The group is completed by including reflection $f$ across one of its $n$ interior angle bisectors, which satisfies $f^2 = e$. Clearly, reflections and rotations do not commute, but do generate all $2n$ rigid transformations of a regular $n$-gon, which is a nonabelian group.
+\end{enumerate}
+\end{frame}
+\begin{frame}
+\frametitle{2.3 - Groups}
+\small
+\begin{enumerate}
+	\item[(19)] \quad If we use $n=3$, then the base case is proven by the definition of associativity: $a_1\cdot a_2\cdot a_3 = a_1\cdot(a_2\cdot a_3) = (a_1\cdot a_2)\cdot a_3$. 
+	
+	\quad If we suppose the result holds for any collection of  $n\leq k$ elements $a_i$, then any bracketing of $a_1\cdot a_2\cdot \cdots \cdot a_k$ will result in the same product. Right-multiplying by $a_{k+1}$ produces the product $a_1\cdot a_2\cdot \cdots\cdot a_k\cdot a_{k+1}$. Any means of bracketing this product will result in some product of bracketed products, each with size less than $k$, meaning each of them can be bracketed any way we want without changing the value. Therefore, we've shown the result for $n=k+1$. So, by induction, associativity means we can re-bracket any product without affecting the value of the product.
+\end{enumerate}
+\end{frame}
+\begin{frame}
+\frametitle{2.3 - Groups}
+\small
+\begin{enumerate}
+	\item[(20)] First, we note closure. Because $\det(\mathbf A), \det(\mathbf B)\in\mathbb Q$, we have that $\det(\mathbf{AB}) = \det(\mathbf A)\det(\mathbf B)\in\mathbb Q$ because the rationals are closed under multiplication. Associativity is inherited from the process of matrix multiplication. We still contain the identity $\mathbf I_2$ in the set, so we have an $\mathbf{AI}=\mathbf{IA}=\mathbf A$. Moreover, because $\det(\mathbf A^{-1}) = 1 / \det(\mathbf A)$ which is also rational, $\mathbf A$ being in the set implies that $\mathbf A^{-1}$ is also in it. Therefore, the set is a group.
+\end{enumerate}
+\end{frame}
+\begin{frame}
+\frametitle{2.3 - Groups}
+\small
+\begin{enumerate}
+	\item[(21)] We note closure by the fact that the lower-left element of $\mathbf{AB}$ will be $a_{0,0}\cdot 0 + 0\cdot b_{1,1} = 0$, so the product is in the set. Associativity is again inherited from the process of matrix multiplication. Indeed, the identity $\mathbf I_2$ is in the set as well. Lastly, the inverse of a given matrix will fit the same upper-triangular footprint, so inverses are closed as well:
+	\begin{equation*}
+		\begin{pmatrix}
+			a & b \\
+			0 & d
+		\end{pmatrix}^{-1} = 
+		\begin{pmatrix}
+			1/a & -b/da \\
+			0 & 1/d
+		\end{pmatrix}
+	\end{equation*}
+	Any given product in this group will take the form,
+	\begin{equation*}
+		\begin{pmatrix}
+			a & b \\
+			0 & d
+		\end{pmatrix}
+		\begin{pmatrix}
+			a' & b' \\
+			0 & d'
+		\end{pmatrix} = 
+		\begin{pmatrix}
+			aa' & ab' + bd' \\
+			0 & dd'
+		\end{pmatrix}
+	\end{equation*}
+	Because it need not be the case that $ab' + bd' = ba' + db'$, the group is not abelian.
+\end{enumerate}
+\end{frame}
+\begin{frame}
+\frametitle{2.3 - Groups}
+\small
+\begin{enumerate}
+	\item[(22)] The product,
+	\begin{equation*}
+		\mathbf{AB} = 
+		\begin{pmatrix}
+			ab & 0 \\
+			0 & a^{-1}b^{-1}
+		\end{pmatrix} =
+		\begin{pmatrix}
+			ba & 0 \\
+			0 & b^{-1}a^{-1}
+		\end{pmatrix} = \mathbf{BA}
+	\end{equation*}
+	illustrates both the closure and abelian properties of the group. Associativity follows from the process of matrix multiplication. It contains the identity $\mathbf I_2$, and we have inverses
+	\begin{equation*}
+		\begin{pmatrix}
+			a & 0 \\
+			0 & a^{-1}
+		\end{pmatrix}^{-1} =
+		\begin{pmatrix}
+			a^{-1} & 0 \\
+			0 & a
+		\end{pmatrix}
+	\end{equation*}
+	and so the set is an abelian group.
+\end{enumerate}
+\end{frame}
+\begin{frame}
+\frametitle{2.3 - Groups}
+\small
+\begin{enumerate}
+	\item[(23)] We construct the subgroup $H \subset G$,
+	\begin{equation*}
+	H = \left\{
+	\begin{pmatrix}
+		1 & 0 \\
+		0 & 1
+	\end{pmatrix},
+	\begin{pmatrix}
+		-1 & 0 \\
+		0 & 1
+	\end{pmatrix},
+	\begin{pmatrix}
+		-1 & 0 \\
+		0 & -1
+	\end{pmatrix},
+	\begin{pmatrix}
+		1 & 0 \\
+		0 & -1
+	\end{pmatrix}
+	\right\}
+	\end{equation*}
+	It is closed, associative, contains the identity and inverses (every element is idempotent), and is fully contained in $G$. Therefore, it is a subgroup of order 4.
+\end{enumerate}
+\end{frame}
+\begin{frame}
+\frametitle{2.3 - Groups}
+\small
+\begin{enumerate}
+	\item[(24)] Enforcing the determinant condition, our set can contain,
+	\begin{equation*}
+	G = \left\{
+	\begin{bmatrix}
+		1 & 0 \\
+		0 & 1
+	\end{bmatrix}, 	
+	\begin{bmatrix}
+		0 & 1 \\
+		1 & 0
+	\end{bmatrix}, 
+	\begin{bmatrix}
+		1 & 0 \\
+		1 & 1
+	\end{bmatrix}, 	
+	\begin{bmatrix}
+		1 & 1 \\
+		0 & 1
+	\end{bmatrix}, 	
+	\begin{bmatrix}
+		1 & 1 \\
+		1 & 0
+	\end{bmatrix}, 
+	\begin{bmatrix}
+		0 & 1 \\
+		1 & 1
+	\end{bmatrix}
+	\right\}
+	\end{equation*}
+	Associativity is inherited from matrix multiplication, and the identity is present. Closure can be intuited from the ``determinant-as-area'' interpretation of the determinant condition; a sequence of linear maps which scale the area of regions by an odd factor must also scale the area of regions by an odd factor. The last two elements are inverse to one another, while the first four are their own inverses. Thus, $G$ is a group.
+\end{enumerate}
+\end{frame}
+\begin{frame}
+\frametitle{2.3 - Groups}
+\small
+\begin{enumerate}
+	\item[(25a)] Let $\gamma: J_3\to \mathcal{P}\left(J_3\times J_3\right)$ be a function which maps $[k]\in J_3$ to the pairs of elements $[i],[j]\in J_3$ satisfying $[i][j]=[k]$. The total number of elements in $M_2(J_3)$ will be $3^4 = 81$, but some of these do not satisfy $ad-bc\neq 0$. We now note that $\gamma([0]) = \{([i], [0]), ([0], [i]) \mid [i]\in J_3\}$, so $|\gamma([0])| = 2\cdot 2 + 1 = 5$. Therefore, there are $5\cdot 5 = 25$ cases in which $ad = 0, bc = 0$ and so $ad - bc = 0$, which brings satisfactory cases down to $81 - 25 = 56$. Lastly, we have
+	\begin{align*}
+	\gamma([1]) &= \{([1], [1]), ([2], [2])\} \\
+	\gamma([2]) &= \{([1], [2]), ([2], [1])\}
+	\end{align*}
+	And so there are $2\cdot 2 = 4$ cases of each instance wherein $ad = bc = 1$ and $ad = bc = 2$, which subtract off another $4 + 4 = 8$ instances, bringing $o(G)$ down to $48$. Every such element now satisfies $ad - bc \neq 0$, and $o(G) = 48$ as desired.
+\end{enumerate}
+\end{frame}
+\begin{frame}
+\frametitle{2.3 - Groups}
+\small
+\begin{enumerate}
+	\item[(25b)] We note that $ad - bc = 2$ if $(ad,bc) \in \{(2, 0), (1, 2), (0, 1)\}$. Because we've computed $\gamma$-values for each of these remainder classes in the last problem, we can subtract them off by case. In the $(2,0)$ and $(0, 1)$ cases, we have $2\cdot 5 = 10$ matrices each, bringing our total down to $48 - 20 = 28$. In the last case, we have $2\cdot 2 = 4$ unsatisfactory cases, leaving the total $28 - 4 = 24$, so our new size is $o(G) = 24$. 
+\end{enumerate}
+\end{frame}
+\begin{frame}
+\frametitle{2.3 - Groups}
+\small
+\begin{enumerate}
+	\item[(26a)] We can consider constructing an element of $G$ as choosing one of the $p^2 - 1$ nonzero vectors in $J_p\times J_p$, then choosing another linearly independent nonzero vector. Each nonzero vector has $p$ multiples which are not linearly independent, so this means each of our $(p^2 - 1)$ first vectors can be paired with $(p^2 - p)$ partners, which constructs $(p^2 - 1)(p^2 - p)$ elements of $G$. So, 
+	\begin{equation*}
+	o(G) = (p^2 - 1)(p^2 - p)
+	\end{equation*}
+	\item[(26b)] If we once again fix our first row to be one of $(p^2 - 1)$ nonzero vectors, we then will have as many options for the second row as there are solutions to $[a]x - [b]y = 1$, which is $p$ solutions. This tells us that our subgroup will have size,
+	\begin{equation*}
+	o(H) = (p^2 - 1)p
+	\end{equation*}
+\end{enumerate}
+\end{frame}
+\begin{frame}
+\frametitle{2.5 - Subgroups}
+\small
+\begin{enumerate}
+	\item[(1)] \quad Because both $H$ and $K$ are subgroups, $e\in H$ and $e\in K$, so $e\in H\cap K$. If any $a,b$ are in $H$ and in $K$, then to enforce closure in both subgroups $ab\in H$, $ab\in K$, so $ab\in H\cap K$. Likewise, inverses are contained in $H\cap K$. Thus, $H\cap K$ must be a subgroup. 
+	
+	\quad By this argument (and associativity of intersection), one can inductively prove that any finite sequence of intersections will yield a subgroup. In the infinite case, the only element which must necessarily appear in any subgroup of $G$ is $e$, so the smallest infinite intersection can result in $(e)$, the trivial subgroup. Therefore, even infinite intersections will yield a subgroup.
+\end{enumerate}
+\end{frame}
+\begin{frame}
+\frametitle{2.5 - Subgroups}
+\small
+\begin{enumerate}
+	\item[(2)] Suppose, for the sake of contradiction, that there exists a non-idempotent element $a\in G$, i.e. one that satisfies $a^n \neq e$. Then we construct the following sequence $\{S\}_k$ of abelian subgroups for $k > 1$:
+	\begin{equation*}
+	S_k = \left\{\left(a^{\pm ik}\right)\mid i\in\mathbb Z\right\}
+	\end{equation*}
+	The intersection of all of these subgroups, $\bigcap_k \{S\}_k$ cannot contain any non-identity $a^n$. If it did, it would imply that $S_{n+1}$ contained $a^n$, which can only be the case if $n$ is a multiple of $n+1$, which is absurd. Thus, the intersection subgroup $\bigcap_k \{S\}_k = (e)$. This contradicts our assumption, so every element of $G$ must have finite order.
+\end{enumerate}
+\end{frame}
+\begin{frame}
+\frametitle{2.5 - Subgroups}
+\small
+\begin{enumerate}
+	\item[(3)] \quad If we assume that $G$ is infinite, then by the contrapositive of problem (2), $G$ must have a nontrivial subgroup and so we have a contradiction. So, $G$ is finite.
+	
+	\quad The finitude of $G$ implies that there exists an $a\in G$ which satisfies $a^{o(G)} = a$. If $o(G) = pq$ is composite, then $b = a^p\in G$ generates a subgroup $(b)$ with  $b^q = e$ implying an order of $o\left((b)\right) = q$, so we have a nontrivial subgroup. Therefore, by contradiction, $G$ must have a prime order.
+\end{enumerate}
+\end{frame}
+\begin{frame}
+\frametitle{2.5 - Subgroups}
+\small
+\begin{enumerate}
+	\item[(4a)] Because $e\in H$, we have that $aea^{-1} = aa^{-1} = e \in aHa^{-1}$. Moreover, $(aha^{-1})^{-1} = ah^{-1}a^{-1}$, which is in $aHa^{-1}$ because $h^{-1}\in H$. Multiplying two elements in $aHa^{-1}$ results in a product,
+	\begin{equation*}
+	(aha^{-1})(ah'a^{-1}) = ah(a^{-1}a)h'a^{-1} = ahh'a^{-1}
+	\end{equation*}
+	which is also in the set. So, we have closure, identity, and inverse so $aHa^{-1}$ is a subgroup of $G$.
+	\item[(4b)] We denote $\sigma: H\to aHa^{-1}$ as the \textit{canonical map} which sends $\sigma(h) = aha^{-1}$. Due to the cancellation property in $H$ as a group, this map is injective and thus a bijection. Because the domain and codomain are finite, $o(H) = o(aHa^{-1})$.
+\end{enumerate}
+\end{frame}
+\begin{frame}
+\frametitle{2.5 - Subgroups}
+\small
+\begin{enumerate}
+	\item[(5)] \quad If $G$ is abelian, then $aH = Ha$ and so there is an obvious bijection (and thus one-to-one correspondence) between left- and right-cosets via the identity map.
+	
+	\quad We already know that there is a one-to-one correspondence between the elements of $G$ with one another via the injective inverse map $\iota: g\mapsto g^{-1}$. Likewise, we can map the left-cosets to the right-cosets via $I: GH\to HG$ which sends $I(aH) = H\iota(a) = Ha^{-1}$ injectively. Thus, there is a one-to-one correspondence between the left- and right-cosets via $I$.
+\end{enumerate}
+\end{frame}
+\begin{frame}
+\frametitle{2.5 - Subgroups}
+\small
+\begin{enumerate}
+	\item[(6a)] The two right-cosets are
+	\begin{equation*}
+	He = \{e, a^2, a^4, a^6, a^8\}\qquad\qquad Ha = \{a, a^3, a^5, a^7, a^9\}
+	\end{equation*}
+	\item[(6b)] There are five right-cosets:
+	\begin{align*}
+	He = \{e, a^5\} \qquad & \qquad Ha = \{a, a^6\} \\
+	Ha^2 = \{a^2, a^7\} \qquad & \qquad Ha^3 = \{a^3, a^8\} \\
+	Ha^4 = \{a^4, a^9\} \qquad & \qquad
+	\end{align*}
+	\item[(6c)] We interpret $G$ as $S_3$ and $H$ as $\{e, (2\;3)\}$. We then have three right-cosets:
+	\begin{align*}
+	He = \{e, (2\;3)\}\qquad & \qquad H(1\;2) = \{(1\;2), (1\;3\;2)\} \\
+	H(1\;3) = \{(1\;3), (1\;2\;3)\}\qquad & \qquad
+	\end{align*}
+\end{enumerate}
+\end{frame}
+\begin{frame}
+\frametitle{2.5 - Subgroups}
+\small
+\begin{enumerate}
+	\item[(7a)] The two left-cosets are
+	\begin{equation*}
+	eH = \{e, a^2, a^4, a^6, a^8\}\qquad\qquad aH = \{a, a^3, a^5, a^7, a^9\}
+	\end{equation*}
+	\item[(7b)] There are five left-cosets:
+	\begin{align*}
+	eH = \{e, a^5\} \qquad & \qquad aH = \{a, a^6\} \\
+	a^2H = \{a^2, a^7\} \qquad & \qquad a^3H = \{a^3, a^8\} \\
+	a^4H = \{a^4, a^9\} \qquad & \qquad
+	\end{align*}
+	\item[(7c)] We interpret $G$ as $S_3$ and $H$ as $\{e, (2\;3)\}$. We then have three left-cosets:
+	\begin{align*}
+	eH = \{e, (2\;3)\}\qquad & \qquad (1\;2)H = \{(1\;2), (1\;2\;3)\} \\
+	(1\;3)H = \{(1\;3), (1\;3\;2)\}\qquad & \qquad
+	\end{align*}
+\end{enumerate}
+\end{frame}
+\begin{frame}
+\frametitle{2.5 - Subgroups}
+\small
+\begin{enumerate}
+	\item[(8)] No; in case (c), the left-coset $(1\;2)H$ is not a right-coset $Ha$ for any $a\in S_3$.
+\end{enumerate}
+\end{frame}
 \end{document}
